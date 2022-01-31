@@ -1,16 +1,47 @@
 //====================================================================================================
 .wrapper {
+   background-image: linear-gradient(to right top, #27fa15, #00efa3, #00dbf6, #00beff, #009bff, #5085ff, #8468f3, #b03cd9, #db29b7, #f32b95, #fc4377, #fb5f5f);
 }
 .page {
-      display: flex;
-      justify-content: center;
+      flex: 1 1 auto;
+      position: relative;
+    
 		// .page__container
 
-		&__container {    
+		&__container {
 		}
-      &__element {
-         margin: 0 auto;
-         height: 100vh; 
+      img {
+         display: none;
+      }
+      &__img {
+         position: absolute;
+         right: 50%;
+         bottom: 250px;
+         width: 150px;
+         height: 150px;
+      }
+      &__img-2 {
+         position: absolute;
+         right: 40%;
+         bottom: 250px;
+         width: 150px;
+         height: 150px;
+      }
+      &__paragraph {
+         font-weight: 400;
+         font-size: 90px;
+         font-family: inherit; 
+         position: absolute;
+         right: 27%;
+         bottom: 100px;
+         height: 150px;
+         font-size: 72px;
+         color: #fff;
+         /*
+         background-image: linear-gradient(to right top, #ffffff, #d8ffff, #76ffff, #65ffce, #ccff5a);
+	      -webkit-background-clip: text;
+	      -webkit-text-fill-color: transparent;
+         */
       }
 }
 
