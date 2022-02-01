@@ -1,16 +1,17 @@
 //====================================================================================================
 .wrapper {
+   background-image: linear-gradient(to right top, #27fa15, #00efa3, #00dbf6, #00beff, #009bff, #5085ff, #8468f3, #b03cd9, #db29b7, #f32b95, #fc4377, #fb5f5f);
 }
 .page {
       display: flex;
-      justify-content: center;
+      
 		// .page__container
 
 		&__container {    
 		}
-      &__element {
-         margin: 0 auto;
-         height: 100vh; 
+      
+      .main__title {
+         padding: 2rem 0;
       }
 }
 
