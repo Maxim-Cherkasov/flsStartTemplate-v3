@@ -57,7 +57,7 @@
 		"smooth-scroll": "latest",
 		"string-replace-loader": "latest",
 		"style-loader": "latest",
-		"swiper": "latest",
+		"swiper": "^8.0.1",
 		"terser-webpack-plugin": "latest",
 		"tippy.js": "latest",
 		"transform-runtime": "0.0.0",

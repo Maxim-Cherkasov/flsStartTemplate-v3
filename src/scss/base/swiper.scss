@@ -1,6 +1,11 @@
 .swiper {
 	overflow: hidden;
 }
+.image-slider .swiper-button-prev::after,
+.image-slider .swiper-button-next::after {
+	color: #fff;
+	font-size: 80px;
+}
 .swiper-wrapper {
 	width: 100%;
 	height: 200px;
