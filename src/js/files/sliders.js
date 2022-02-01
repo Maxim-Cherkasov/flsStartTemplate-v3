@@ -32,8 +32,7 @@ function initSliders() {
 		new Swiper('.swiper', { // Указываем скласс нужного слайдера
 			// Подключаем модули слайдера
 			// для конкретного случая
-			modules: [Navigation, Autoplay],
-
+			modules: [Navigation],
 			observer: true,
 			observeParents: true,
 			slidesPerView: 1,

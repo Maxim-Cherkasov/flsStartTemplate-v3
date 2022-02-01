@@ -54,6 +54,12 @@ const config = {
 		port: 'auto',
 		hot: true,
 		host: 'local-ip',
+		// Расскоментировать на слабом ПК
+		/*
+		devMiddleware: {
+			writeToDisk: true,
+		},
+		*/
 		watchFiles: [
 			`${paths.src}/**/*.html`,
 			`${paths.src}/**/*.pug`,

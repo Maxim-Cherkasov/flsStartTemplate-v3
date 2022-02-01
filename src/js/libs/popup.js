@@ -19,8 +19,8 @@ class Popup {
 			// Для сторонних объектов
 			fixElementSelector: '[data-lp]', // Атрибут для элементов с левым паддингом (которые fixed)
 			// Для объекта попапа
-			youtubeAttribute: 'data-youtube', // Атрибут для кода youtube
-			youtubePlaceAttribute: 'data-youtube-place', // Атрибут для вставки ролика youtube
+			youtubeAttribute: 'data-popup-youtube', // Атрибут для кода youtube
+			youtubePlaceAttribute: 'data-popup-youtube-place', // Атрибут для вставки ролика youtube
 			setAutoplayYoutube: true,
 			// Изменение классов
 			classes: {
@@ -44,6 +44,7 @@ class Popup {
 				afterClose: function () { },
 			},
 		}
+		this.youTubeCode;
 		this.isOpen = false;
 		// Текущее окно
 		this.targetOpen = {
@@ -114,6 +115,9 @@ class Popup {
 				this._dataValue = buttonOpen.getAttribute(this.options.attributeOpenButton) ?
 					buttonOpen.getAttribute(this.options.attributeOpenButton) :
 					'error';
+				this.youTubeCode = buttonOpen.getAttribute(this.options.youtubeAttribute) ?
+					buttonOpen.getAttribute(this.options.youtubeAttribute) :
+					null;
 				if (this._dataValue !== 'error') {
 					if (!this.isOpen) this.lastFocusEl = buttonOpen;
 					this.targetOpen.selector = `${this._dataValue}`;
@@ -185,11 +189,9 @@ class Popup {
 
 			if (this.targetOpen.element) {
 				// YouTube
-				if (this.targetOpen.element.hasAttribute(this.options.youtubeAttribute)) {
-					const codeVideo = this.targetOpen.element.getAttribute(this.options.youtubeAttribute);
-
+				if (this.youTubeCode) {
+					const codeVideo = this.youTubeCode;
 					const urlVideo = `https://www.youtube.com/embed/${codeVideo}?rel=0&showinfo=0&autoplay=1`
-
 					const iframe = document.createElement('iframe');
 					iframe.setAttribute('allowfullscreen', '');
 
@@ -198,8 +200,10 @@ class Popup {
 
 					iframe.setAttribute('src', urlVideo);
 
-					if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`))
-						this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
+					if (!this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`)) {
+						const youtubePlace = this.targetOpen.element.querySelector('.popup__text').setAttribute(`${this.options.youtubePlaceAttribute}`, '');
+					}
+					this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).appendChild(iframe);
 				}
 				if (this.options.hashSettings.location) {
 					// Получение хэша и его выставление 
@@ -248,7 +252,7 @@ class Popup {
 				}));
 				this.popupLogging(`Открыл попап`);
 
-			} else this.popupLogging(`Ой ой, такого попапа нет. Проверьте корректность ввода. `);
+			} else this.popupLogging(`Ой ой, такого попапа нет.Проверьте корректность ввода. `);
 		}
 	}
 	close(selectorValue) {
@@ -268,7 +272,7 @@ class Popup {
 		}));
 
 		// YouTube
-		if (this.targetOpen.element.hasAttribute(this.options.youtubeAttribute)) {
+		if (this.youTubeCode) {
 			if (this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`))
 				this.targetOpen.element.querySelector(`[${this.options.youtubePlaceAttribute}]`).innerHTML = '';
 		}
@@ -314,7 +318,7 @@ class Popup {
 			document.querySelector(`${window.location.hash}`) ? `${window.location.hash}` :
 				null;
 
-		const buttons = document.querySelector(`[${this.options.attributeOpenButton}="${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton}="${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton}="${classInHash.replace('.', "#")}"]`);
+		const buttons = document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) ? document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash}"]`) : document.querySelector(`[${this.options.attributeOpenButton} = "${classInHash.replace('.', "#")}"]`);
 		if (buttons && classInHash) this.open(classInHash);
 	}
 	// Утсановка хэша

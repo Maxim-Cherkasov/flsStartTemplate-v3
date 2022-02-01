@@ -211,7 +211,6 @@ export function spollers() {
 				initSpollers(mdQueriesItem.itemsArray, mdQueriesItem.matchMedia);
 			});
 		}
-
 		// Инициализация
 		function initSpollers(spollersArray, matchMedia = false) {
 			spollersArray.forEach(spollersBlock => {
@@ -269,6 +268,22 @@ export function spollers() {
 				spollerActiveTitle.classList.remove('_spoller-active');
 				_slideUp(spollerActiveTitle.nextElementSibling, spollerSpeed);
 			}
+		}
+		const spollersClose = document.querySelectorAll('[data-spoller-close]');
+		if (spollersClose.length) {
+			document.addEventListener("click", function (e) {
+				const el = e.target;
+				if (!el.closest('[data-spollers]')) {
+					spollersClose.forEach(spollerClose => {
+						const spollersBlock = spollerClose.closest('[data-spollers]');
+						const spollerSpeed = spollersBlock.dataset.spollersSpeed ? parseInt(spollersBlock.dataset.spollersSpeed) : 500;
+						if (!spollersBlock.querySelectorAll('._slide').length) {
+							spollerClose.classList.remove('_spoller-active');
+							_slideUp(spollerClose.nextElementSibling, spollerSpeed);
+						}
+					});
+				}
+			});
 		}
 	}
 }
