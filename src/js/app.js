@@ -46,14 +46,14 @@ flsFunctions.isWebp();
 Документация:
 Сниппет (HTML): tabs
 */
-// flsFunctions.tabs();
+ flsFunctions.tabs();
 
 /*
 Модуль "показать еще"
 Документация по работе в шаблоне:
 Сниппет (HTML): showmore
 */
-// flsFunctions.showMore();
+ flsFunctions.showMore();
 
 /*
 Попапы
@@ -83,10 +83,10 @@ import * as flsForms from "./files/forms/forms.js";
 // flsForms.formSubmit();
 
 /* Модуль формы "колличество" */
-// flsForms.formQuantity();
+ flsForms.formQuantity();
 
 /* Модуль звездного рейтинга */
-// flsForms.formRating();
+ flsForms.formRating();
 
 /* Модуль работы с select. */
 // import './libs/select.js'

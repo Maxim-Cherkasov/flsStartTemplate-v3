@@ -14,10 +14,65 @@
 					<div class="spollers__body">Контент спойлера</div>
 				</div>
 			</div>
-			<div class="basic__slider swiper">
-				<div class="basic__wrapper swiper-wrapper">
-					<div class="basic__slide swiper-slide"></div>
+			<div class="rating rating_set">
+				<div class="rating__body">
+					<div class="rating__active"></div>
+					<div class="rating__items">
+						<input type="radio" class="rating__item" value="1" name="rating">
+						<input type="radio" class="rating__item" value="2" name="rating">
+						<input type="radio" class="rating__item" value="3" name="rating">
+						<input type="radio" class="rating__item" value="4" name="rating">
+						<input type="radio" class="rating__item" value="5" name="rating">
+					</div>
 				</div>
+				<div class="rating__value">3.6</div>
+			</div>
+			<div data-tabs class="tabs">
+				<nav data-tabs-titles class="tabs__navigation">
+					<button type="button" class="tabs__title _tab-active">Таб №1</button>
+					<button type="button" class="tabs__title">Таб №2</button>
+					<button type="button" class="tabs__title">Таб №3</button>
+					<button type="button" class="tabs__title">Таб №2</button>
+					<button type="button" class="tabs__title">Таб №3</button>
+					<button type="button" class="tabs__title">Таб №2</button>
+					
+				</nav>
+				<div data-tabs-body class="tabs__content">
+					<div class="tabs__body">
+						Содержимое первого таба
+					</div>
+					<div class="tabs__body">
+						Содержимое второго таба
+					</div>
+					<div class="tabs__body">
+						Содержимое третьего таба
+					</div>
+					<div class="tabs__body">
+						Содержимое первого таба
+					</div>
+					<div class="tabs__body">
+						Содержимое второго таба
+					</div>
+					<div class="tabs__body">
+						Содержимое третьего таба
+					</div>
+				</div>
+			</div>
+			<div data-showmore class="block_3">
+				<div data-showmore-content class="block_3__content">erferferferf</div>
+				<button hidden data-showmore-button type="button" class="block_3__more"><span>Показать еще</span><span>Скыть</span></button>
+			</div>
+			<div class="slider__slider swiper">
+				<div class="slider__wrapper swiper-wrapper">
+					<div class="slider__slide swiper-slide"></div>
+				</div>
+			</div>
+			<div class="quantity">
+				<button type="button" class="quantity__button quantity__button_plus"></button>
+				<div class="quantity__input">
+					<input autocomplete="off" type="text" name="form[]" value="1">
+				</div>
+				<button type="button" class="quantity__button quantity__button_minus"></button>
 			</div>
 	</main>
 	@@include('html/_footer.htm',{})
