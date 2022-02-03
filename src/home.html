@@ -1,63 +1,29 @@
 <!DOCTYPE html>
 <html lang="ru">
-	@@include('html/_head.htm',{
-	"title":"Главная"
-	})
-	<body>
-		<div class="wrapper">
-			@@include('html/_header.htm',{})
-			<main class="page">
-				<div class="page__container main">
-					<h1 class="main__title">Malamuts</h1>
+@@include('html/_head.htm',{
+"title":"Главная"
+})
 
-	<div class="image-slider swiper-container slider">
-		<!-- Слайдер -->
-		<div class="image-slider__wrapper swiper-wrapper">
-			<div class="image-slider__slide swiper-slide">
-				<div class="image-slider__image">
-					<img class="" src="@img/dogs-photos/PFnd9i1r3bE.jpg" alt="Картинка">
+<body>
+	<div class="wrapper wrapper__container">
+		@@include('html/_header.htm',{})
+		<main class=" page">
+			<div data-spollers class="spollers">
+				<div class="spollers__item">
+					<button type="button" data-spoller class="spollers__title">Заголовок спойлера</button>
+					<div class="spollers__body">Контент спойлера</div>
 				</div>
 			</div>
-			<div class="image-slider__slide swiper-slide">
-				<div class="image-slider__image">
-					<img src="@img/dogs-photos/-QlE5Oktf74.jpg" alt="Картинка">
+			<div class="basic__slider swiper">
+				<div class="basic__wrapper swiper-wrapper">
+					<div class="basic__slide swiper-slide"></div>
 				</div>
 			</div>
-			<div class="image-slider__slide swiper-slide">
-				<div class="image-slider__image">
-					<img src="@img/dogs-photos/3GVMD5Mt3r0.jpg" alt="Картинка">
-				</div>
-			</div>
-			<div class="image-slider__slide swiper-slide">
-				<div class="image-slider__image">
-					<img src="img/04.jpg" alt="Картинка">
-				</div>
-			</div>
-			<div class="image-slider__slide swiper-slide">
-				<div class="image-slider__image">
-					<img src="img/05.jpg" alt="Картинка">
-				</div>
-			</div>
-			<div class="image-slider__slide swiper-slide">
-				<div class="image-slider__image">
-					<img src="img/06.jpg" alt="Картинка">
-				</div>
-			</div>
-		</div>
-		<!-- Добавляем если нам нужны стрелки управления -->
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
-		<!-- Добавляем, если нам нужна пагинация 
-		<div class="swiper-pagination"></div>
-		<div class="swiper-scrollbar"></div>
-	-->
-		
+	</main>
+	@@include('html/_footer.htm',{})
 	</div>
-				</div>
-			</main>
-			@@include('html/_footer.htm',{})
-		</div>
-		@@include('html/_popup.htm',{})
-		@@include('html/_js.htm',{})
-	</body>
+	@@include('html/_popup.htm',{})
+	@@include('html/_js.htm',{})
+</body>
+
 </html>
