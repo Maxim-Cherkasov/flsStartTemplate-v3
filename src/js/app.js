@@ -10,7 +10,7 @@
 Если мы хотим добавить модуль
 следует его расскоментировать
 */
-
+flsFunctions.spollers();
 // Включить/выключить FLS (Full Logging System) (в работе)
 window['FLS'] = true;
 
@@ -46,14 +46,14 @@ flsFunctions.isWebp();
 Документация:
 Сниппет (HTML): tabs
 */
-// flsFunctions.tabs();
+ flsFunctions.tabs();
 
 /*
 Модуль "показать еще"
 Документация по работе в шаблоне:
 Сниппет (HTML): showmore
 */
-// flsFunctions.showMore();
+ flsFunctions.showMore();
 
 /*
 Попапы

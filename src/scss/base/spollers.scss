@@ -5,10 +5,12 @@
 .spollers {
 	display: grid;
 	gap: 15px;
+	width: 370px;
+	margin-bottom: rem(30);
 }
 // Спойлер
 .spollers__item {
-	font-size: rem(20);
+	font-size: rem(18);
 }
 // Заголовок спойлера
 .spollers__title {
@@ -19,21 +21,24 @@
 	padding: rem(10) rem(15);
 	border-radius: rem(5);
 	position: relative;
-	._spoller-init & {
+	// добавляем базовые стили псевдоклассам
+	._spoller-init & { 
 		cursor: pointer;
 		&::before,
 		&::after {
 			content: "";
-			position: absolute;
+			position: absolute; // позиционируем относительно spollers__title
 			right: 10px;
-			top: 50%;
+			top: 52%;
+			margin: 0 auto;
 			background-color: #000;
 			height: 2px;
-			width: 15px;
+			width: 14px;
 			transition: transform 0.5s ease 0s;
 		}
+		// стили изначального _spoller-init
 		&::before {
-			transform: translate(-75%, -50%) rotate(40deg);
+			transform: translate(-75%, -50%) rotate(40deg); 
 		}
 		&::after {
 			transform: translate(0, -50%) rotate(-40deg);
@@ -50,7 +55,7 @@
 }
 // Контент спойлера
 .spollers__body {
-	padding: rem(20);
+	padding: rem(10) rem(15);
 	border-radius: rem(5);
 	border: 1px solid #eee;
 }

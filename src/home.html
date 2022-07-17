@@ -8,7 +8,46 @@
 			@@include('html/_header.htm',{})
 			<main class="page">
 				<div class="page__container">
-				<div class="page__element"><img src="@img/bydesign.jpg" alt=""></div>
+
+					<div data-spollers class="spollers">
+						<div class="spollers__item">
+							<button type="button" data-spoller class="spollers__title">
+								Заголовок спойлера
+							</button>
+							<div class="spollers__body">
+								Контент спойлера
+							</div>
+						</div>
+					</div>
+					
+					<div data-tabs class="tabs">
+						<nav data-tabs-titles class="tabs__navigation">
+							<button type="button" class="tabs__title _tab-active">Таб №1</button>
+							<button type="button" class="tabs__title">Таб №2</button>
+							<button type="button" class="tabs__title">Таб №3</button>
+						</nav>
+						<div data-tabs-body class="tabs__content">
+							<div class="tabs__body">
+								Содержимое первого таба
+							</div>
+							<div class="tabs__body">
+								Содержимое второго таба
+							</div>
+							<div class="tabs__body">
+								Содержимое третьего таба
+							</div>
+						</div>
+					</div>
+
+					
+					<div data-showmore class="block">g
+						<div data-showmore-content class="block__content">show</div>
+						<button hidden data-showmore-button type="button" class="block__more">
+							<span>Показать еще</span>
+							<span>Скрыть</span>
+						</button>
+					</div>
+
 				</div>
 			</main>
 			@@include('html/_footer.htm',{})
